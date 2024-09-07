@@ -18,10 +18,19 @@ subprojects {
             name = "libs"
             dirs = setOf(rootProject.file("lib"))
         }
+        maven(url = "https://maven.aliyun.com/repository/public/")
         mavenCentral()
         maven(url = "https://jitpack.io")
         maven(url = "https://libraries.minecraft.net")
     }
+
+    buildscript {
+            repositories {
+                maven(url = "https://maven.aliyun.com/repository/public/")
+                mavenLocal()
+                mavenCentral()
+            }
+        }
 
     tasks.withType<JavaCompile> {
         sourceCompatibility = "1.8"
